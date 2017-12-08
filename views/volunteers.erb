@@ -1,0 +1,14 @@
+<h3>Here are all of our Volunteers</h3>
+
+<% if @volunteers.any? %>
+  <ul>
+    <% @volunteers.each do |volunteer| %>
+      <li><a href="volunteers/<%= volunteer.id %>"><% volunteer.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no volunteers yet</p>
+<% end %>
+
+<p><a href="/volunteers/add-volunteer">Click here to add a new volunteer</a></p>
+<p><a href="/">Click here to return to the home page</a></p>
