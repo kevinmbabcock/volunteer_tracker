@@ -2,8 +2,10 @@
 
 <form action="/volunteers" method="post">
   <div class="form-group">
-    <label class="form-label" for="volunteerName">Project Name:</label>
-    <input class="form-control" id="volunteerName" name="volunteerName" type="text" placeholder="Project Name" autofocus>
+    <!-- <input id="project_id" name="project_id" type="hidden" value="<%= @project.id %>"> -->
+    <label class="form-label" for="volunteerName">Volunteer Name:</label>
+    <input class="form-control" id="volunteerName" name="volunteerName" type="text" placeholder="Volunteer Name" autofocus>
+
   </div>
   <button type="submit" class="btn-primary">Submit</button>
 </form>
