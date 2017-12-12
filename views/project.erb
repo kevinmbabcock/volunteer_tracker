@@ -3,16 +3,22 @@
   <p>Volunteers:</p>
     <ul>
       <% @volunteers.each do |volunteer| %>
-        <li><%= volunteer.name %></li>
+        <% if volunteer.project_id == @project.id %>
+          <li><%= volunteer.name %></li>
+        <% end %>
       <% end %>
     </ul>
 
+<hr>
+
 <h3>Please fill out the form to add a volunteer</h3>
 
-<form action="/projects/:id" method="post">
+<form action="/projects/<%= @project.id %>" method="post">
   <div class="form-group">
     <label class="form-label" for="volunteerName">Volunteer Name:</label>
     <input class="form-control" id="volunteerName" name="volunteerName" type="text" placeholder="Volunteer Name" autofocus>
   </div>
   <button type="submit" class="btn-primary">Submit</button>
 </form>
+
+<p><a href = "/">Click to return to home page</a></p>
