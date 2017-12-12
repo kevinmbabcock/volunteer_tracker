@@ -25,4 +25,9 @@ class Volunteer
     self.name.==(other_volunteer.name).&(self.project_id.==(other_volunteer.project_id))
   end
 
+  # def self.find(id)
+  #   found_volunteer = nil
+  #   Volunteer.all.each do |volunteer|
+  #     if volunteer.
+
 end
