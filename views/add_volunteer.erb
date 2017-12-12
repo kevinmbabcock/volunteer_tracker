@@ -2,10 +2,14 @@
 
 <form action="/volunteers" method="post">
   <div class="form-group">
-    <!-- <input id="project_id" name="project_id" type="hidden" value="<%= @project.id %>"> -->
     <label class="form-label" for="volunteerName">Volunteer Name:</label>
     <input class="form-control" id="volunteerName" name="volunteerName" type="text" placeholder="Volunteer Name" autofocus>
-
+    <label for="project_id">Select a Project:</label>
+    <select id='project_id' name='project_id' type='text'>
+      <% @projects.each do |project| %>
+        <option value="<%= project.id%>"> <%= project.name %> </option>
+      <% end %>
+    </select>
   </div>
   <button type="submit" class="btn-primary">Submit</button>
 </form>

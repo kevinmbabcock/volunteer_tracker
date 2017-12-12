@@ -21,6 +21,11 @@ get('/projects/add-project') do
   erb(:add_project)
 end
 
+get('/projects/:id') do
+  @project = Project.find(params[:id].to_i)
+  erb(:project)
+end
+
 post('/projects') do
   name = params.fetch("projectName")
   new_project = Project.new({:name => name, :id => nil})
@@ -35,7 +40,14 @@ get('/volunteers') do
 end
 
 get('/volunteers/add-volunteer') do
+  @volunteers = Volunteer.all
+  @projects = Project.all
   erb(:add_volunteer)
+end
+
+get('/volunteers/:id') do
+  @volunteer = Volunteer.find(params[:project_id].to_i)
+  erb(:volunteer)
 end
 
 post('/volunteers') do
@@ -46,3 +58,4 @@ post('/volunteers') do
   @volunteers = Volunteer.all
   erb(:volunteers)
 end
+#
