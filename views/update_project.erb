@@ -1,0 +1,20 @@
+<h3>Update info for <%= @project.name %></h3>
+
+<form action="/projects/<%= @project.id %>" method="post">
+  <div class="form-group">
+    <input name="_method" type="hidden" value="patch">
+
+    <label class="form-label" for="projectName">New Project Name:</label>
+    <input class="form-control" id="projectName" name="projectName" type="text" placeholder="Project Name" autofocus>
+  </div>
+  <button type="submit" class="btn-primary">Update</button>
+</form>
+
+<hr>
+
+<form action="/projects/<%= @project.id %>" method="post">
+  <div class="form-group">
+    <input name="_method" type="hidden" value="delete">
+  </div>
+  <button type="submit">Delete Project</button>
+</form>
